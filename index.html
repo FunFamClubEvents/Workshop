@@ -601,10 +601,104 @@
 
     /* MOBILE BOOKING BAR */
 
-    .mobile-booking {
-      display: none;
-    }
+    /* FIXED MOBILE BOOKING BAR */
+.mobile-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 14px calc(11px + env(safe-area-inset-bottom));
+  background: var(--ivory);
+  border-top: 1px solid #d8c69c;
+  box-shadow: 0 -4px 18px rgba(48, 9, 20, 0.08);
+}
 
+.mobile-bar-price {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mobile-bar-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+}
+
+.mobile-current-price {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--maroon);
+}
+
+.mobile-old-price {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.mobile-bar-note {
+  font-size: 0.62rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.mobile-bar-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 16px;
+  background: var(--maroon);
+  color: var(--ivory);
+  border: 1px solid var(--maroon);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.mobile-bar-cta:hover {
+  background: var(--maroon-deep);
+}
+
+@media (min-width: 650px) {
+  .mobile-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-bar {
+    gap: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mobile-current-price {
+    font-size: 1.35rem;
+  }
+
+  .mobile-bar-note {
+    font-size: 0.56rem;
+  }
+
+  .mobile-bar-cta {
+    padding: 0 11px;
+    font-size: 0.72rem;
+  }
+}
     /* ANIMATIONS */
 
     .reveal {
@@ -1066,15 +1160,23 @@
   </footer>
 
   <!-- Mobile sticky booking bar -->
-  <div class="mobile-booking">
-    <div class="mobile-price">
-      <small>Early bird</small>
-      <strong>₹759</strong>
+<div class="mobile-bar">
+  <div class="mobile-bar-price">
+    <div class="mobile-bar-prices">
+      <span class="mobile-current-price">₹759</span>
+      <span class="mobile-old-price">₹900</span>
     </div>
-    <a href="https://rzp.io/rzp/7U6e1vC">
-      Book your spot ↗
-    </a>
+    <span class="mobile-bar-note">
+      Early bird · ₹200 F&amp;B coupon included
+    </span>
   </div>
+
+  <a class="mobile-bar-cta booking-link"
+     href="#booking-pending"
+     aria-label="Book your spot">
+    Book your spot <span aria-hidden="true">↗</span>
+  </a>
+</div>
 
   <!-- Image lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded gallery image">

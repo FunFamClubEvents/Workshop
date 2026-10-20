@@ -1,0 +1,1172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#3b0918">
+<meta name="description" content="Lippan & Glow — a royal Diwali art experience by Fun Fam Club at Swinton House, Jaipur.">
+<title>Lippan & Glow | Fun Fam Club Jaipur</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --wine: #3b0918;
+  --maroon: #541327;
+  --red: #70263a;
+  --gold: #d7b36a;
+  --gold-light: #f2dfb0;
+  --cream: #faf5eb;
+  --paper: #fffdf8;
+  --ink: #28191a;
+  --muted: #76666a;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 25px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+body.modal-open { overflow: hidden; }
+
+img { display: block; width: 100%; }
+
+a { color: inherit; }
+
+button { font: inherit; }
+
+.wrap {
+  width: min(1120px, calc(100% - 44px));
+  margin-inline: auto;
+}
+
+.gold-text { color: var(--gold-light); }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .7rem;
+  font-weight: 600;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-heading {
+  font-family: var(--serif);
+  color: var(--wine);
+  font-weight: 600;
+  font-size: clamp(2.7rem, 5.5vw, 4.5rem);
+  line-height: .98;
+  margin: 12px 0 20px;
+}
+
+.section-copy {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.gold-line {
+  display: block;
+  width: 58px;
+  height: 1px;
+  background: var(--gold);
+  margin: 22px 0;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 760px;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at 50% 35%, #762b40 0%, transparent 54%),
+    linear-gradient(140deg, #270610, #4b1022 52%, #2d0712);
+  overflow: hidden;
+  border-bottom: 1px solid var(--gold);
+}
+
+.hero::before,
+.hero::after {
+  content: "✦";
+  position: absolute;
+  color: var(--gold);
+  opacity: .45;
+  pointer-events: none;
+}
+
+.hero::before {
+  top: 25%;
+  left: 5%;
+  font-size: 38px;
+}
+
+.hero::after {
+  right: 7%;
+  bottom: 16%;
+  font-size: 25px;
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .12;
+  background-image:
+    radial-gradient(circle at center, transparent 0 15px, var(--gold) 16px, transparent 17px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to bottom, transparent, black 25%, transparent 85%);
+}
+
+.topbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #d7b36a38;
+  gap: 20px;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1;
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+.brand small {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--sans);
+  text-transform: uppercase;
+  font-size: .57rem;
+  letter-spacing: .23em;
+  color: #f5e7ce;
+}
+
+.topbar-note {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--gold-light);
+  text-align: right;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 55px 0 76px;
+}
+
+.hero-kicker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  color: var(--gold-light);
+  margin: 0 0 12px;
+}
+
+.hero-kicker::before,
+.hero-kicker::after {
+  content: "";
+  height: 1px;
+  width: 35px;
+  background: var(--gold);
+}
+
+h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(4.6rem, 11vw, 9rem);
+  letter-spacing: -.055em;
+  line-height: .78;
+  margin: 25px 0 22px;
+}
+
+h1 span {
+  display: block;
+  color: var(--gold-light);
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 14px;
+}
+
+.hero-subtitle {
+  color: #f6e7d7;
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.3vw, 1.7rem);
+  margin: 28px 0 30px;
+}
+
+.hero-image-frame {
+  position: relative;
+  width: min(480px, 100%);
+  margin: 0 auto 28px;
+  padding: 8px;
+  border: 1px solid var(--gold);
+  background: #f8ecd6;
+  box-shadow: 0 25px 65px #16030a70;
+  transform: rotate(-1deg);
+  transition: transform .4s ease;
+}
+
+.hero-image-frame:hover { transform: rotate(0deg) translateY(-4px); }
+
+.hero-image-frame img {
+  height: 290px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-caption {
+  padding: 8px 5px 1px;
+  color: var(--wine);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 22px;
+  color: #f8ead6;
+  font-size: .84rem;
+  margin: 26px 0;
+}
+
+.hero-meta span { white-space: nowrap; }
+
+.meta-star { color: var(--gold); }
+
+.price-card {
+  width: min(460px, 100%);
+  margin: 0 auto;
+  padding: 23px 24px 25px;
+  background: #2d0713b8;
+  border: 1px solid var(--gold);
+  box-shadow: 0 12px 40px #19040a45;
+}
+
+.price-label {
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .69rem;
+}
+
+.price {
+  font-family: var(--serif);
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--gold-light);
+  margin: 5px 0;
+}
+
+.price-note {
+  color: #f7e8d4;
+  font-size: .79rem;
+  margin: 8px 0 20px;
+}
+
+.coupon-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d7b36a75;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  color: var(--gold-light);
+  font-size: .78rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 24px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--wine);
+  text-decoration: none;
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: var(--gold-light);
+}
+
+.btn-outline {
+  color: var(--gold-light);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  color: var(--wine);
+  background: var(--gold-light);
+}
+
+.price-card .btn { width: 100%; }
+
+/* EXPERIENCE */
+
+.experience {
+  position: relative;
+  background: var(--cream);
+}
+
+.experience-intro {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  align-items: end;
+  gap: 55px;
+  margin-bottom: 45px;
+}
+
+.experience-intro .section-copy { margin-bottom: 5px; }
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #d9c9aa;
+  border-bottom: 1px solid #d9c9aa;
+}
+
+.experience-card {
+  padding: 30px 23px 32px;
+  border-right: 1px solid #d9c9aa;
+  transition: background .25s ease, transform .25s ease;
+}
+
+.experience-card:last-child { border-right: 0; }
+
+.experience-card:hover {
+  background: #f0e4cf;
+  transform: translateY(-4px);
+}
+
+.experience-symbol {
+  color: #9c7634;
+  font-size: 1.8rem;
+}
+
+.experience-card h3 {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--wine);
+  margin: 14px 0 8px;
+}
+
+.experience-card p {
+  color: var(--muted);
+  font-size: .83rem;
+  margin: 0;
+}
+
+/* DIWALI MOMENT */
+
+.diwwali {
+  position: relative;
+  overflow: hidden;
+  padding: 68px 0;
+  text-align: center;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at center, #74283d, transparent 75%),
+    var(--wine);
+  border-block: 1px solid var(--gold);
+}
+
+.diwwali .ornament {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.diwwali h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 1;
+  margin: 16px auto;
+  max-width: 750px;
+}
+
+.diwwali p {
+  max-width: 560px;
+  margin: 0 auto;
+  color: #f0dfd0;
+  font-size: .9rem;
+}
+
+/* VENUE GALLERY */
+
+.venue {
+  background: var(--paper);
+}
+
+.venue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 36px;
+}
+
+.venue-header .section-heading { max-width: 630px; }
+
+.gallery-count {
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: .75rem;
+  padding-bottom: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 14px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #d8c49a;
+  background: #eee2d2;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-item::after {
+  content: "↗";
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #fff9;
+  color: white;
+  background: #2b091b85;
+  font-size: 1.1rem;
+}
+
+.gallery-caption {
+  display: block;
+  padding: 12px 14px;
+  background: var(--cream);
+  color: var(--wine);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+
+.venue-note {
+  color: var(--muted);
+  font-size: .76rem;
+  margin-top: 16px;
+}
+
+/* EVENT DETAILS */
+
+.details {
+  background: #f1e7d6;
+}
+
+.details-layout {
+  display: grid;
+  grid-template-columns: .85fr 1fr;
+  gap: 75px;
+  align-items: start;
+}
+
+.details-intro {
+  position: sticky;
+  top: 24px;
+}
+
+.details-list {
+  border-top: 1px solid #d3c09a;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 17px;
+  padding: 22px 0;
+  border-bottom: 1px solid #d3c09a;
+}
+
+.detail-icon {
+  font-size: 1.25rem;
+  color: #96702e;
+}
+
+.detail-row h3 {
+  margin: 0 0 5px;
+  color: var(--wine);
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.detail-row p {
+  margin: 0;
+  font-size: .86rem;
+  color: var(--muted);
+}
+
+/* FINAL CTA */
+
+.final-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, #70263a, transparent 68%),
+    var(--wine);
+  color: var(--cream);
+  border-top: 1px solid var(--gold);
+}
+
+.final-cta .section-heading {
+  color: var(--gold-light);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.final-cta p {
+  color: #f1e4d5;
+  margin: 22px auto 30px;
+  max-width: 540px;
+  font-size: .9rem;
+}
+
+.final-cta .btn { min-width: 240px; }
+
+/* FOOTER: T&Cs ONLY */
+
+footer {
+  padding: 25px 0;
+  background: #270610;
+  color: var(--gold-light);
+  text-align: center;
+  border-top: 1px solid #d7b36a60;
+}
+
+.terms-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--gold-light);
+  font-size: .77rem;
+  cursor: pointer;
+  letter-spacing: .06em;
+  padding: 6px 10px;
+}
+
+.terms-toggle:hover { color: white; }
+
+.terms-panel {
+  max-width: 750px;
+  margin: 16px auto 0;
+  padding: 18px 20px;
+  border-top: 1px solid #d7b36a50;
+  color: #e9d9c7;
+  font-size: .78rem;
+  text-align: left;
+}
+
+.terms-panel[hidden] { display: none; }
+
+.terms-panel ol { padding-left: 20px; }
+
+.terms-panel li { margin: 8px 0; }
+
+/* IMAGE LIGHTBOX */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #16040ddd;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility .25s;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  width: min(950px, 100%);
+  max-height: 90vh;
+}
+
+.lightbox img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  text-align: center;
+  color: var(--gold-light);
+  padding: 10px;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  background: var(--wine);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* MOBILE BOOKING BAR */
+
+.mobile-bar {
+  display: none;
+}
+
+/* MOTION */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .section { padding: 75px 0; }
+
+  .hero { min-height: auto; }
+
+  .experience-intro {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .experience-grid { grid-template-columns: 1fr 1fr; }
+
+  .experience-card:nth-child(2) { border-right: 0; }
+
+  .experience-card:nth-child(-n+2) { border-bottom: 1px solid #d9c9aa; }
+
+  .gallery { grid-template-columns: 1fr 1fr; }
+
+  .gallery-item:first-child { grid-column: 1 / -1; }
+
+  .gallery-item:first-child img { height: 350px; }
+
+  .gallery-item img { height: 260px; }
+
+  .details-layout { gap: 35px; }
+}
+
+@media (max-width: 600px) {
+  body { padding-bottom: 74px; }
+
+  .wrap { width: calc(100% - 34px); }
+
+  .section { padding: 65px 0; }
+
+  .topbar { padding: 19px 0; }
+
+  .topbar-note { font-size: .59rem; }
+
+  .hero-content { padding: 47px 0 52px; }
+
+  .hero-kicker { font-size: .61rem; }
+
+  h1 { font-size: clamp(4rem, 17vw, 6.5rem); }
+
+  .hero-image-frame img { height: 245px; }
+
+  .hero-meta {
+    display: grid;
+    gap: 7px;
+    margin: 24px 0;
+  }
+
+  .price-card { padding: 21px 17px; }
+
+  .price { font-size: 3.5rem; }
+
+  .section-heading { font-size: clamp(2.6rem, 11vw, 3.5rem); }
+
+  .experience-grid { gap: 0; }
+
+  .experience-card { padding: 22px 15px 24px; }
+
+  .experience-card h3 { font-size: 1.45rem; }
+
+  .experience-card p { font-size: .79rem; }
+
+  .diwwali { padding: 57px 0; }
+
+  .venue-header {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .gallery-item:first-child { grid-column: 1 / -1; }
+
+  .gallery-item:first-child img { height: 250px; }
+
+  .gallery-item img { height: 175px; }
+
+  .gallery-caption {
+    font-size: 1rem;
+    padding: 9px 10px;
+  }
+
+  .gallery-item::after {
+    width: 28px;
+    height: 28px;
+    right: 8px;
+    top: 8px;
+  }
+
+  .details-layout { grid-template-columns: 1fr; gap: 25px; }
+
+  .details-intro { position: static; }
+
+  .final-cta { padding: 70px 0; }
+
+  .mobile-bar {
+    display: block;
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 15px calc(10px + env(safe-area-inset-bottom));
+    background: #300714f5;
+    border-top: 1px solid var(--gold);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobile-bar .btn {
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero" id="home">
+  <div class="hero-pattern"></div>
+
+  <div class="wrap">
+    <nav class="topbar" aria-label="Main navigation">
+      <a href="#home" class="brand">
+        Fun Fam Club
+        <small>Jaipur · Creative Experiences</small>
+      </a>
+      <div class="topbar-note">A special Diwali edition<br>Sunday · 25 October</div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow hero-kicker">An artful festive escape</p>
+
+      <h1>Lippan <span>&amp; Glow</span></h1>
+
+      <p class="hero-subtitle">A little tradition. A little sparkle. All you.</p>
+
+      <div class="hero-image-frame">
+        <img
+          src="https://i.pinimg.com/736x/27/ef/36/27ef36063d881e46c73c56ebaafd5482.jpg"
+          alt="Decorative lotus-inspired Lippan art with mirror details"
+          fetchpriority="high"
+        >
+        <div class="image-caption">Create something beautiful, with your own hands.</div>
+      </div>
+
+      <div class="hero-meta">
+        <span><span class="meta-star">✦</span> Sunday, 25 October 2026</span>
+        <span><span class="meta-star">✦</span> 2 PM – 4 PM</span>
+        <span><span class="meta-star">✦</span> Swinton House, Jaipur</span>
+      </div>
+
+      <div class="price-card">
+        <div class="price-label">Your festive art experience</div>
+        <div class="price">₹800 <span style="font-family:var(--sans);font-size:.8rem;font-weight:400;">/ person</span></div>
+        <p class="price-note">Everything you need to create and take home your own Lippan artwork.</p>
+        <div class="coupon-note">
+          <span aria-hidden="true">✧</span>
+          ₹200 F&amp;B coupon included with ticket price
+        </div>
+        <a class="btn booking-link" href="#register">Reserve your spot <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section experience">
+    <div class="wrap">
+      <div class="experience-intro reveal">
+        <div>
+          <p class="eyebrow" style="color:#96702e;">The experience</p>
+          <h2 class="section-heading">A festive ritual,<br>made by you.</h2>
+        </div>
+        <p class="section-copy">
+          This Diwali, step away from the usual plans and spend an afternoon creating something meaningful. Discover the beauty of Lippan art, add your own details, and take home a handmade piece for your festive space.
+        </p>
+      </div>
+
+      <div class="experience-grid reveal">
+        <article class="experience-card">
+          <div class="experience-symbol" aria-hidden="true">✧</div>
+          <h3>Discover</h3>
+          <p>Get introduced to Lippan art, its patterns, textures and mirror-work details.</p>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-symbol" aria-hidden="true">❋</div>
+          <h3>Create</h3>
+          <p>Follow step-by-step guidance and bring your own design to life.</p>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-symbol" aria-hidden="true">◇</div>
+          <h3>Unwind</h3>
+          <p>Enjoy the cafe atmosphere with a ₹200 F&amp;B coupon included in your ticket.</p>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-symbol" aria-hidden="true">✦</div>
+          <h3>Take home</h3>
+          <p>Leave with the Lippan art decor piece you created yourself.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="diwwali">
+    <div class="wrap reveal">
+      <div class="ornament" aria-hidden="true">✧ &nbsp; ✦ &nbsp; ✧</div>
+      <h2>Make this Diwali a little more personal.</h2>
+      <p>Less scrolling, more creating. An afternoon of art, festive charm and memories worth taking home.</p>
+    </div>
+  </section>
+
+  <section class="section venue" id="venue">
+    <div class="wrap">
+      <div class="venue-header reveal">
+        <div>
+          <p class="eyebrow" style="color:#96702e;">The setting</p>
+          <h2 class="section-heading">A beautiful place<br>to make beautiful things.</h2>
+          <p class="section-copy">Join us at Swinton House, Jaipur, for a creative afternoon in a thoughtfully chosen cafe setting.</p>
+        </div>
+        <div class="gallery-count">THE VENUE &nbsp;·&nbsp; 01 — 03</div>
+      </div>
+
+      <div class="gallery reveal">
+        <!-- Replace these three image URLs with your approved Swinton House photographs if needed. -->
+        <button class="gallery-item" type="button"
+          data-image="https://swintonhouse.com/wp-content/uploads/2023/12/Design.jpg"
+          data-caption="Swinton House · Jaipur">
+          <img
+            src="https://swintonhouse.com/wp-content/uploads/2023/12/Design.jpg"
+            alt="Swinton House venue"
+            loading="lazy"
+          >
+          <span class="gallery-caption">The setting</span>
+        </button>
+
+        <button class="gallery-item" type="button"
+          data-image="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+          data-caption="A warm and inviting interior">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
+            alt="Warm cafe-inspired interior"
+            loading="lazy"
+          >
+          <span class="gallery-caption">The ambience</span>
+        </button>
+
+        <button class="gallery-item" type="button"
+          data-image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+          data-caption="An inviting space to slow down">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+            alt="Elegant contemporary interior"
+            loading="lazy"
+          >
+          <span class="gallery-caption">The little details</span>
+        </button>
+      </div>
+
+      <p class="venue-note">Select any image to enlarge it. The second and third photographs are illustrative interior references, not verified photographs of Swinton House.</p>
+    </div>
+  </section>
+
+  <section class="section details">
+    <div class="wrap details-layout">
+      <div class="details-intro reveal">
+        <p class="eyebrow" style="color:#96702e;">Your afternoon, planned</p>
+        <h2 class="section-heading">All the lovely details.</h2>
+        <span class="gold-line"></span>
+        <p class="section-copy">Come as you are. No prior art experience is needed — just bring your curiosity and your creative side.</p>
+      </div>
+
+      <div class="details-list reveal">
+        <article class="detail-row">
+          <div class="detail-icon" aria-hidden="true">◷</div>
+          <div>
+            <h3>Sunday, 25 October 2026</h3>
+            <p>2:00 PM – 4:00 PM. Arrive a little early so we can begin together.</p>
+          </div>
+        </article>
+
+        <article class="detail-row">
+          <div class="detail-icon" aria-hidden="true">⌖</div>
+          <div>
+            <h3>Swinton House, Jaipur</h3>
+            <p>A cafe setting for your festive creative escape.</p>
+          </div>
+        </article>
+
+        <article class="detail-row">
+          <div class="detail-icon" aria-hidden="true">✧</div>
+          <div>
+            <h3>Everything is included</h3>
+            <p>Art materials, step-by-step guidance, your take-home Lippan artwork and a ₹200 F&amp;B coupon redeemable at the venue.</p>
+          </div>
+        </article>
+
+        <article class="detail-row">
+          <div class="detail-icon" aria-hidden="true">♡</div>
+          <div>
+            <h3>₹800 per person</h3>
+            <p>Your ticket includes the complete workshop experience and the ₹200 F&amp;B coupon.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta" id="register">
+    <div class="wrap reveal">
+      <p class="eyebrow gold-text">Your Diwali date is sorted</p>
+      <h2 class="section-heading">Come for the art.<br>Leave with a little glow.</h2>
+      <p>Make something with your own hands, enjoy a change of scene, and take home a festive piece that's uniquely yours.</p>
+      <!-- Replace the placeholder below with your actual registration or payment URL. -->
+      <a class="btn booking-link" href="https://www.instagram.com/funfam_club/" target="_blank" rel="noopener noreferrer">
+        Register your interest <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <button class="terms-toggle" type="button" aria-expanded="false" aria-controls="terms-panel">
+      Terms &amp; Conditions <span aria-hidden="true" id="terms-arrow">＋</span>
+    </button>
+
+    <div class="terms-panel" id="terms-panel" hidden>
+      <ol>
+        <li>Registration is subject to availability and confirmation by the organiser.</li>
+        <li>The ₹200 F&amp;B coupon is redeemable at Swinton House during the event, subject to venue terms. Any amount above the coupon value is payable by the attendee.</li>
+        <li>All workshop materials required for the guided Lippan art activity are included in the ticket price.</li>
+        <li>Participants can take home the artwork they create during the workshop.</li>
+        <li>Please arrive on time so the guided session can begin as scheduled.</li>
+        <li>For cancellation, transfer or refund queries, contact Fun Fam Club directly before making a booking.</li>
+      </ol>
+    </div>
+  </div>
+</footer>
+
+<!-- Interactive venue image viewer -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Venue photograph viewer">
+  <div class="lightbox-content">
+    <button class="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <img id="lightbox-image" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+<div class="mobile-bar">
+  <a class="btn booking-link" href="#register">Join Lippan &amp; Glow · ₹800</a>
+</div>
+
+<script>
+/* Reveal sections as they enter the viewport */
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealElements.forEach(element => observer.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add('visible'));
+}
+
+/* Interactive venue gallery */
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const closeButton = document.querySelector('.lightbox-close');
+let lastFocusedElement = null;
+
+function openLightbox(image, caption) {
+  lastFocusedElement = document.activeElement;
+  lightboxImage.src = image;
+  lightboxImage.alt = caption;
+  lightboxCaption.textContent = caption;
+  lightbox.classList.add('open');
+  document.body.classList.add('modal-open');
+  closeButton.focus();
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.classList.remove('modal-open');
+  lightboxImage.src = '';
+  if (lastFocusedElement) lastFocusedElement.focus();
+}
+
+document.querySelectorAll('.gallery-item').forEach(button => {
+  button.addEventListener('click', () => {
+    openLightbox(button.dataset.image, button.dataset.caption);
+  });
+});
+
+closeButton.addEventListener('click', closeLightbox);
+
+lightbox.addEventListener('click', event => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+    closeLightbox();
+  }
+});
+
+/* Expandable terms and conditions */
+const termsToggle = document.querySelector('.terms-toggle');
+const termsPanel = document.getElementById('terms-panel');
+const termsArrow = document.getElementById('terms-arrow');
+
+termsToggle.addEventListener('click', () => {
+  const isExpanded = termsToggle.getAttribute('aria-expanded') === 'true';
+  termsToggle.setAttribute('aria-expanded', String(!isExpanded));
+  termsPanel.hidden = isExpanded;
+  termsArrow.textContent = isExpanded ? '＋' : '−';
+});
+
+/* Keep all booking CTAs pointed to the registration section.
+   Update the registration link above when your booking URL is ready. */
+document.querySelectorAll('.booking-link').forEach(link => {
+  if (link.getAttribute('href') === '#register') {
+    link.addEventListener('click', () => {
+      document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>

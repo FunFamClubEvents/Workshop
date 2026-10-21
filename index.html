@@ -15,16 +15,30 @@
 
 @media (max-width: 600px) {
   .hero-artwork {
-    width: 78%;
-    margin: 14px auto;
+    width: 88%;
+    margin: 18px auto 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-artwork img {
+    display: block;
     width: 100%;
     height: auto;
-    max-height: 320px;
+    max-height: none;
     object-fit: contain;
     object-position: center;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    text-align: center;
+    line-height: 1.05;
+  }
+
+  .hero p {
+    text-align: center;
   }
 }
     

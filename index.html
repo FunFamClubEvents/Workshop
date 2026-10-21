@@ -619,12 +619,11 @@
 
     /* MOBILE BOOKING BAR */
 
-    /* FIXED MOBILE BOOKING BAR */
 .mobile-bar {
   position: fixed;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -680,15 +679,21 @@
   background: var(--maroon);
   color: var(--ivory);
   border: 1px solid var(--maroon);
+  border-radius: 0;
   text-decoration: none;
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
   white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.mobile-bar-cta:hover {
+.mobile-bar-cta:hover,
+.mobile-bar-cta:focus,
+.mobile-bar-cta:active {
   background: var(--maroon-deep);
+  color: var(--ivory);
+  outline: none;
 }
 
 @media (min-width: 650px) {
@@ -717,6 +722,7 @@
     font-size: 0.72rem;
   }
 }
+
     /* ANIMATIONS */
 
     .reveal {
@@ -1165,12 +1171,17 @@
     </span>
   </div>
 
-  <a class="mobile-bar-cta booking-link"
-     href="#booking-pending"
-     aria-label="Book your spot">
+  <a
+    class="mobile-bar-cta"
+    href="https://rzp.io/rzp/7U6e1vC"
+    id="mobile-booking-cta"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     Book your spot <span aria-hidden="true">↗</span>
   </a>
 </div>
+
 
   <!-- Image lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded gallery image">

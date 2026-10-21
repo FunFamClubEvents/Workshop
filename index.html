@@ -688,12 +688,24 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.mobile-bar-cta,
+.mobile-bar-cta:link,
+.mobile-bar-cta:visited,
 .mobile-bar-cta:hover,
 .mobile-bar-cta:focus,
+.mobile-bar-cta:focus-visible,
 .mobile-bar-cta:active {
-  background: var(--maroon-deep);
+  background-color: var(--maroon);
   color: var(--ivory);
+  border-color: var(--maroon);
+  text-decoration: none;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-bar-cta:active {
+  background-color: var(--maroon-deep);
+  color: var(--ivory);
 }
 
 @media (min-width: 650px) {

@@ -1029,6 +1029,74 @@
         text-transform: uppercase;
       }
     }
+
+    
+.terms {
+  padding: 65px 8%;
+  background: var(--ivory);
+  color: var(--maroon);
+}
+
+.terms-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.terms h2 {
+  font-family: var(--serif);
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 400;
+  margin: 12px 0 32px;
+}
+
+.terms h2 em {
+  color: var(--gold);
+}
+
+.terms ol {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.terms li {
+  padding-left: 8px;
+  margin-bottom: 22px;
+}
+
+.terms li::marker {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.terms li strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.terms li p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media (max-width: 560px) {
+  .terms {
+    padding: 52px 7%;
+  }
+
+  .terms h2 {
+    font-size: 36px;
+    margin-bottom: 26px;
+  }
+
+  .terms li {
+    margin-bottom: 20px;
+  }
+}
+
+
   </style>
 </head>
 
@@ -1171,6 +1239,37 @@
         Get your ticket <span>↗</span>
       </a>
     </section>
+
+      
+<section class="terms">
+  <div class="terms-inner">
+    <div class="section-kicker">Before you join us</div>
+    <h2>Terms &amp; <em>Conditions.</em></h2>
+
+    <ol>
+      <li>
+        <strong>No Refund Policy</strong>
+        <p>Tickets are non-refundable once booked, except if the event is cancelled by the organizers.</p>
+      </li>
+      <li>
+        <strong>Event Cancellation</strong>
+        <p>If the event is cancelled by the organizers, eligible ticket holders will receive a full refund.</p>
+      </li>
+      <li>
+        <strong>Ticket Transfer</strong>
+        <p>Tickets are transferable with prior notice to the organizers. The new attendee’s details must be shared before the event.</p>
+      </li>
+      <li>
+        <strong>Participant Responsibility</strong>
+        <p>Participants are responsible for their personal belongings and any personal expenses incurred during the event.</p>
+      </li>
+      <li>
+        <strong>Organizer’s Decision</strong>
+        <p>The organizers reserve the right to refuse entry or participation in cases of inappropriate or disruptive behaviour.</p>
+      </li>
+    </ol>
+  </div>
+</section>
   </main>
 
   <footer>

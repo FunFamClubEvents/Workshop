@@ -1031,8 +1031,9 @@
     }
 
     
+
 .terms {
-  padding: 65px 8%;
+  padding: 35px 8%;
   background: var(--ivory);
   color: var(--maroon);
 }
@@ -1042,39 +1043,60 @@
   margin: 0 auto;
 }
 
-.terms h2 {
+.terms-dropdown {
+  border-top: 1px solid #dfd0bd;
+  border-bottom: 1px solid #dfd0bd;
+}
+
+.terms-dropdown summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
   font-family: var(--serif);
-  font-size: clamp(34px, 5vw, 52px);
-  font-weight: 400;
-  margin: 12px 0 32px;
+  font-size: 23px;
+  color: var(--maroon);
 }
 
-.terms h2 em {
+.terms-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.terms-chevron {
+  font-family: sans-serif;
+  font-size: 25px;
   color: var(--gold);
+  transition: transform 0.25s ease;
 }
 
-.terms ol {
+.terms-dropdown[open] .terms-chevron {
+  transform: rotate(180deg);
+}
+
+.terms-dropdown ol {
   padding-left: 22px;
-  margin: 0;
+  margin: 0 0 24px;
 }
 
-.terms li {
+.terms-dropdown li {
   padding-left: 8px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
-.terms li::marker {
+.terms-dropdown li::marker {
   color: var(--gold);
-  font-weight: 700;
 }
 
-.terms li strong {
+.terms-dropdown li strong {
   display: block;
   font-size: 14px;
   margin-bottom: 6px;
 }
 
-.terms li p {
+.terms-dropdown li p {
   margin: 0;
   color: var(--muted);
   font-size: 13px;
@@ -1083,18 +1105,14 @@
 
 @media (max-width: 560px) {
   .terms {
-    padding: 52px 7%;
+    padding: 28px 7%;
   }
 
-  .terms h2 {
-    font-size: 36px;
-    margin-bottom: 26px;
-  }
-
-  .terms li {
-    margin-bottom: 20px;
+  .terms-dropdown summary {
+    font-size: 21px;
   }
 }
+
 
 
 .early-bird-note {
@@ -1253,34 +1271,42 @@
 </section>
 
       
+
 <section class="terms">
   <div class="terms-inner">
-    <div class="section-kicker">Before you join us</div>
-    <h2>Terms &amp; <em>Conditions.</em></h2>
 
-    <ol>
-      <li>
-        <strong>No Refund Policy</strong>
-        <p>Tickets are non-refundable once booked, except if the event is cancelled by the organizers.</p>
-      </li>
-      <li>
-        <strong>Event Cancellation</strong>
-        <p>If the event is cancelled by the organizers, eligible ticket holders will receive a full refund.</p>
-      </li>
-      <li>
-        <strong>Ticket Transfer</strong>
-        <p>Tickets are transferable with prior notice to the organizers. The new attendee’s details must be shared before the event.</p>
-      </li>
-      <li>
-        <strong>Participant Responsibility</strong>
-        <p>Participants are responsible for their personal belongings and any personal expenses incurred during the event.</p>
-      </li>
-      <li>
-        <strong>Organizer’s Decision</strong>
-        <p>The organizers reserve the right to refuse entry or participation in cases of inappropriate or disruptive behaviour.</p>
-      </li>
-    </ol>
+    <details class="terms-dropdown">
+      <summary>
+        <span>Terms &amp; Conditions</span>
+        <span class="terms-chevron">⌄</span>
+      </summary>
+
+      <ol>
+        <li>
+          <strong>No Refund Policy</strong>
+          <p>Tickets are non-refundable once booked, except if the event is cancelled by the organizers.</p>
+        </li>
+        <li>
+          <strong>Event Cancellation</strong>
+          <p>If the event is cancelled by the organizers, eligible ticket holders will receive a full refund.</p>
+        </li>
+        <li>
+          <strong>Ticket Transfer</strong>
+          <p>Tickets are transferable with prior notice to the organizers. The new attendee’s details must be shared before the event.</p>
+        </li>
+        <li>
+          <strong>Participant Responsibility</strong>
+          <p>Participants are responsible for their personal belongings and any personal expenses incurred during the event.</p>
+        </li>
+        <li>
+          <strong>Organizer’s Decision</strong>
+          <p>The organizers reserve the right to refuse entry or participation in cases of inappropriate or disruptive behaviour.</p>
+        </li>
+      </ol>
+    </details>
+
   </div>
+</section>
 </section>
   </main>
 

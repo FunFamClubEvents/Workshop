@@ -82,11 +82,25 @@
   /* HERO */
   .hero {
     position: relative;
-    padding: 36px 0 36px;
-    background: var(--pink);
+    isolation: isolate;
+    padding: 34px 0 46px;
+    background:
+      radial-gradient(ellipse at 82% 8%, rgba(255,255,255,.58), transparent 30%),
+      radial-gradient(ellipse at 5% 85%, rgba(255,213,79,.45), transparent 28%),
+      linear-gradient(145deg, #ffc4dc 0%, #ffa9ce 48%, #f98ab9 100%);
     border-bottom: 3px solid var(--ink);
     overflow: hidden;
   }
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 1.5px solid rgba(58,46,44,.18);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::before { width: 290px; height: 290px; right: -150px; top: 190px; }
+  .hero::after { width: 190px; height: 190px; left: -115px; bottom: 65px; }
 
   .hero-top-row {
     display: flex;
@@ -123,15 +137,21 @@
   .hero-headline {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 2.7rem;
-    line-height: 1.03;
-    margin: 26px 0 10px;
+    font-size: clamp(2.65rem, 10vw, 3.6rem);
+    line-height: .98;
+    letter-spacing: -.045em;
+    margin: 30px 0 12px;
     position: relative;
     z-index: 3;
     color: var(--ink);
+    text-shadow: 2px 3px 0 rgba(255,253,249,.62);
   }
 
-  .hero-headline .bloom { color: var(--cherry-deep); }
+  .hero-headline .bloom {
+    display: inline-block;
+    color: var(--cherry-deep);
+    text-shadow: 2px 3px 0 rgba(255,253,249,.72);
+  }
 
   .hero-sub-sticker {
     margin: 14px 0 22px;
@@ -142,19 +162,22 @@
   .hero-photo-frame {
     position: relative;
     z-index: 2;
-    margin: 8px 0 20px;
+    margin: 18px 5px 24px;
     border: 3px solid var(--ink);
+    border-radius: 24px 24px 18px 18px;
     background: var(--paper);
-    padding: 8px 8px 34px;
-    transform: rotate(-1.5deg);
-    box-shadow: 6px 6px 0 var(--ink);
+    padding: 9px 9px 35px;
+    transform: rotate(-1deg);
+    box-shadow: 8px 9px 0 var(--ink), 0 18px 35px rgba(58,46,44,.15);
   }
 
   .hero-photo-frame .hero-image {
     width: 100%;
-    height: auto;
+    height: clamp(245px, 72vw, 350px);
     border: 1px dashed var(--ink-soft);
+    border-radius: 15px;
     object-fit: cover;
+    background: #ffe8f1;
   }
 
   .hero-photo-frame .cap {
@@ -458,7 +481,7 @@
   }
 
  .venue-video {
-  width: 72%;
+  width: min(100%, 360px);
   margin: 24px auto 0;
   border: 3px solid var(--ink);
   border-radius: 22px;
@@ -507,68 +530,57 @@
   color: var(--ink);
 }
 
-  .price-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 8px 0 18px;
-  position: relative;
-  z-index: 3;
-}
+  .single-price-card {
+    position: relative;
+    z-index: 3;
+    margin: 20px 0 16px;
+    padding: 19px 18px 18px;
+    text-align: center;
+    background: var(--paper);
+    border: 2.5px solid var(--ink);
+    border-radius: 22px;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .single-price-card .price-eyebrow {
+    margin: 0 0 5px;
+    color: var(--ink-soft);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+  .single-price-card .offer-price {
+    color: var(--cherry-deep);
+    font-family: var(--font-display);
+    font-size: 2.65rem;
+    font-weight: 700;
+    line-height: 1.05;
+  }
+  .single-price-card .price-desc {
+    margin: 7px 0 15px;
+    color: var(--ink-soft);
+    font-size: .88rem;
+    font-weight: 700;
+  }
+  .single-price-card .price-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 12px;
+    font-size: 1rem;
+  }
+  .hero .event-meta {
+    margin: 14px 0 12px;
+    padding: 14px 15px;
+    background: rgba(255,253,249,.55);
+    border: 1.5px solid rgba(58,46,44,.35);
+    border-radius: 17px;
+    line-height: 1.75;
+    font-weight: 800;
+  }
+  .hero .price-line { margin: 13px 0 0; text-align: center; font-weight: 800; }
 
-.price-option {
-  background: var(--paper);
-  border: 2.5px solid var(--ink);
-  border-radius: 18px;
-  padding: 14px 10px;
-  text-align: center;
-  box-shadow: 4px 4px 0 var(--ink);
-}
-
-.price-option:first-child {
-  transform: rotate(-1deg);
-}
-
-.price-option:last-child {
-  transform: rotate(1deg);
-}
-
-.offer-price {
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-  font-weight: 700;
-  color: var(--cherry-deep);
-  line-height: 1.1;
-}
-
-.offer-old-price {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  color: var(--ink-soft);
-  text-decoration: line-through;
-  margin-left: 3px;
-}
-
-.price-title {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-top: 5px;
-}
-
-.price-desc {
-  font-size: 0.68rem;
-  line-height: 1.35;
-  color: var(--ink-soft);
-  margin: 5px 0 12px;
-}
-
-.price-btn {
-  display: block;
-  width: 100%;
-  padding: 9px 6px;
-  font-size: 0.72rem;
-}
   
 </style>
 </head>
@@ -604,7 +616,9 @@
 
     <div class="hero-photo-frame">
       <img 
-  src="heroimg.jpeg"
+  src="./heroimg.jpeg"
+  loading="eager"
+  fetchpriority="high"
   alt="Flowers"
   class="hero-image"
 >
@@ -617,43 +631,13 @@
   <div>📍 BrewAura, Vaishali Nagar, Jaipur</div>
 </div>
 
-<div class="price-options">
-
-  <div class="price-option">
-    <div class="offer-price">
-      ₹349
-    </div>
-
-    <div class="price-title">Entry for 1</div>
-
-    <div class="price-desc">
-      20% OFF on F&amp;B at venue
-    </div>
-
-    <a href="https://rzp.io/rzp/n1lG2w0"
-       class="btn-primary price-btn">
-      Book Now
-    </a>
-  </div>
-
-
-  <div class="price-option">
-    <div class="offer-price">
-      ₹499
-    </div>
-
-    <div class="price-title">Entry for 1</div>
-
-    <div class="price-desc">
-      20% OFF + Flat ₹150 Extra OFF on F&B at venue
-    </div>
-
-    <a href="https://rzp.io/rzp/n1lG2w0"
-       class="btn-primary price-btn">
-      Book Now
-    </a>
-  </div>
-
+<div class="single-price-card">
+  <p class="price-eyebrow">Workshop entry · 1 person</p>
+  <div class="offer-price">₹349</div>
+  <p class="price-desc">20% OFF on F&amp;B at the venue</p>
+  <a href="https://rzp.io/rzp/n1lG2w0" class="btn-primary price-btn" id="hero-cta">
+    🌷 Book your seat
+  </a>
 </div>
 
 <p class="price-line">· Limited seats left only</p>
@@ -711,12 +695,15 @@
 
     <div class="venue-video">
   <video
-    src="Video1.mp4"
     autoplay
-    mute
+    muted
     loop
     playsinline
-    controls>
+    controls
+    preload="metadata"
+    poster="./heroimg.jpeg">
+    <source src="./Video1.mp4" type="video/mp4">
+    Your browser does not support HTML video. Please check that Video1.mp4 is uploaded in this folder.
   </video>
 </div>
 
@@ -741,8 +728,7 @@
 </section>
 
 <footer>
-  <div class="wrap">
-    <section class="terms-section">
+  <section class="terms-section">
   <div class="wrap">
     <h2>Terms & Conditions</h2>
 
@@ -766,7 +752,7 @@
       </li>
     </ol>
   </div>
-</section>
+  </section>
 </footer>
 
 <!-- ============ FIXED MOBILE BOOKING BAR ============ -->
@@ -794,6 +780,19 @@
   if (igLink) igLink.setAttribute("href", INSTAGRAM_URL);
   const mapLink = document.getElementById("map-link");
   if (mapLink) mapLink.setAttribute("href", MAP_URL);
+
+  // Media diagnostics: verify that the expected files exist beside this HTML page.
+  document.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("error", () => {
+      console.error("Image failed to load:", img.currentSrc || img.src);
+      img.alt = (img.alt || "Image") + " — image file could not be loaded";
+    });
+  });
+  document.querySelectorAll("video").forEach((video) => {
+    video.addEventListener("error", () => {
+      console.error("Video failed to load. Check the exact filename and MP4 encoding.");
+    });
+  });
 
   // ====== scroll reveal ======
   const revealEls = document.querySelectorAll(".reveal");
